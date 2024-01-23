@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import SignDetection from "./SignDetection";
 import HomePageLayout from "./HomePageLayout";
+import LearnSign from "./LearnSign";
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +19,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/sign",
         element: <SignDetection />,
+      },
+      {
+        path: "/learn",
+        element: <LearnSign/>,
       },
     ],
   },

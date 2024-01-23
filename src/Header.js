@@ -107,9 +107,9 @@ const Header = () => {
             </SmoothScroll>
           </h2>
           <h2>
-            <SmoothScroll to="About" smooth duration={500}>
+            <Link to="/learn">
               Learn
-            </SmoothScroll>
+            </Link>
           </h2>
           <h2>
             <SmoothScroll to="Contact" smooth duration={500}>
