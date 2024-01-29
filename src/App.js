@@ -5,11 +5,13 @@ import Footer from "./Footer";
 
 function App() {
   return (
+    <>
     <div className="bg-white text-black w-full min-h-screen	px-5 md-px-10">
       <Header/>
       <Outlet/>
-      <Footer/>
     </div>
+      <Footer/>
+    </>
   );
 }
 

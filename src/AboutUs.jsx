@@ -26,7 +26,7 @@ function AboutUs() {
         <div className="md:w-1/2 ">
           <img className="p-12 md:p-20" src="./assets/aboutus.png" alt="" />
         </div>
-        <h3 className="text-sm md:text-2xl text-center md:text-right md:w-1/2">
+        <h3 className="text-sm md:text-2xl text-center md:text-right md:w-1/2 mb-10">
           Driven by a shared passion for technology and a commitment to creating
           positive change, our journey began with the realization that sign
           language, a rich and expressive form of communication, deserves

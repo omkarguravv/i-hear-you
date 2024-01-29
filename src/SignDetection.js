@@ -69,10 +69,10 @@ function SignDetection() {
 
   return (
     <>
-      <div className=" flex w-full jusitify-center items-center">
-        <header className="w-1/2">
+      <div className=" flex flex-col md:flex-row  min-h-screen w-full jusitify-center">
+        <header className="w-full md:w-1/2">
           <Webcam
-          className=" m-auto z-10"
+          // className=" left-0 right-0 mx-auto absolute z-9 text-center w-[640px] h-[480px]"
             ref={webcamRef}
             muted={true}
             // style={{
@@ -89,7 +89,7 @@ function SignDetection() {
           />
 
           <canvas
-          className="hidden m-auto z-10"
+          className="hidden left-0 right-0  mx-auto absolute z-8 text-center w-[640px] h-[480px]"
             ref={canvasRef}
             // style={{
             //   position: "absolute",
@@ -104,10 +104,10 @@ function SignDetection() {
             // }}
           />
         </header>
-        <div className="w-1/2 text-center">
+        <div className="w-full md:w-1/2 text-center static">
           {objects.map((object, index) => (
             <div key={index}>
-              <p className="text-7xl"> Word: {object.class}</p>
+              <p className="text-2xl font-bold md:text-7xl">{object.class}</p>
               {/* <p>Bbox: x={object.bbox[0]}, y={object.bbox[1]}, width={object.bbox[2]}, height={object.bbox[3]}</p> */}
               {/* <p>Confidence Score: {object.score}</p> */}
             </div>

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HoverVideoPlayer from "react-hover-video-player";
+import LearningShimmer from "./LearningShimmer";
 
 const learnings = [
   {
@@ -37,16 +38,26 @@ const learnings = [
 ];
 
 function LearnSign() {
-  return (
+  const [learningData, setLearningData] = useState([]);
+  console.log(learningData)
+  useEffect(() => {
+    setLearningData(learnings);
+  }, []);
+
+  return learningData.length === 0 ? (
+    <LearningShimmer />
+  ) : (
     <>
-      <div className="flex flex-wrap gap-10  text-center w-ful">
-        {learnings.map((learning, index) => (
-          <div key={index} className="w-1/6  ">
+      <div className="flex flex-wrap gap-2 md:gap-10 text-center md:w-full mt-10">
+        {learningData.map((learning, index) => (
+          <div key={index} className="w-40 md:w-1/6 mx-auto">
             <HoverVideoPlayer
               videoSrc={learning.video}
               pausedOverlay={
-                <div className="bg-black/25 flex items-center justify-center h-full text-center text-white font-bold text-3xl ">
-                  <div>{learning.sign}</div>
+                <div className="bg-black/25 flex items-center justify-center h-full text-center text-white font-thin md:font-bold">
+                  <div className="text-lg md:text-3xl text-balance">
+                    {learning.sign}
+                  </div>
                 </div>
               }
             />

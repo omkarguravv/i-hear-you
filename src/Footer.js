@@ -4,8 +4,8 @@ import { Link as SmoothScroll} from 'react-scroll';
 
 const Footer = () => {
   return (
-    <footer name= "Contact" className="py-8">
-      <div className="container mx-auto flex flex-wrap">
+    <footer name= "Contact" className="py-8 bg-[#02060C] text-white">
+      <div className="container mx-auto flex flex-wrap justify-center">
 
         <div className="w-full md:w-1/3 lg:w-1/4 px-4 mb-8">
           <h2 className="text-xl font-bold mb-4">Contact Us</h2>
