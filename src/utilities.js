@@ -17,7 +17,7 @@
 // }
 const labelMap = {
     1:{name:'hello', color:'red'},
-    2:{name:'namaste', color:'yellow'},
+    2:{name:'namaste', color:'red'},
     // 3:{name:'I Love You', color:'lime'},
     // 4:{name:'Yes', color:'blue'},
     // 5:{name:'No', color:'purple'},
