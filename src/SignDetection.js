@@ -10,19 +10,24 @@ import { nextFrame } from "@tensorflow/tfjs";
 import { drawRect } from "./utilities";
 
 const COCO_CLASSES = ["namaste", "hello"];
-const videoConstraints = {
-  width: 1280,
-  height: 720,
+const videoConstraintsEnvironment = {
+  // width: 1280,
+  // height: 720,
   facingMode: "environment",
+};
+const videoConstraintsUser = {
+  // width: 1280,
+  // height: 720,
+  facingMode: "user",
 };
 function App() {
   const [detectedObject, setDetectedObject] = useState("");
 
-  const [activeCamera, setActiveCamera] = useState("environment");
+  const [activeCamera, setActiveCamera] = useState(videoConstraintsUser);
 
   const toggleCamera = () => {
     setActiveCamera((prevCamera) =>
-      prevCamera === "user" ? "environment" : "user"
+      prevCamera === videoConstraintsUser ? videoConstraintsEnvironment : videoConstraintsUser
     );
   };
   const webcamRef = useRef(null);
@@ -119,7 +124,7 @@ function App() {
             ref={webcamRef}
             muted={true}
             // facingMode={activeCamera}
-            videoConstraints={videoConstraints}
+            videoConstraints={activeCamera}
             // style={{
             //   position: "absolute",
             //   marginLeft: "auto",
