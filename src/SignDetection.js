@@ -8,7 +8,13 @@ import { nextFrame } from "@tensorflow/tfjs";
 // 2. TODO - Import drawing utility here
 // e.g. import { drawRect } from "./utilities";
 import { drawRect } from "./utilities";
+
 const COCO_CLASSES = ["namaste", "hello"];
+const videoConstraints = {
+  width: 1280,
+  height: 720,
+  facingMode: "environment",
+};
 function App() {
   const [detectedObject, setDetectedObject] = useState("");
 
@@ -98,7 +104,6 @@ function App() {
       tf.dispose(expanded);
       tf.dispose(obj);
     }
-    
   };
 
   useEffect(() => {
@@ -113,7 +118,8 @@ function App() {
             // className=" left-0 right-0 mx-auto absolute z-9 text-center w-[640px] h-[480px]"
             ref={webcamRef}
             muted={true}
-            facingMode={activeCamera}
+            // facingMode={activeCamera}
+            videoConstraints={videoConstraints}
             // style={{
             //   position: "absolute",
             //   marginLeft: "auto",
@@ -126,7 +132,12 @@ function App() {
             //   height: 480,
             // }}
           />
-          <button className="mt-10 inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-black shadow-xl shadow-black/20 ring-1 [&:not(:focus)]:ring-inset ring-gray-700/30 hover:bg-gray-700/70 focus:ring-gray-600 focus:ring-offset-2 text-base font-medium px-5 py-2.5 justify-center text-white" onClick={toggleCamera}>Toggle Camera</button>
+          <button
+            className="mt-10 inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-black shadow-xl shadow-black/20 ring-1 [&:not(:focus)]:ring-inset ring-gray-700/30 hover:bg-gray-700/70 focus:ring-gray-600 focus:ring-offset-2 text-base font-medium px-5 py-2.5 justify-center text-white"
+            onClick={toggleCamera}
+          >
+            Toggle Camera
+          </button>
           <canvas
             className="hidden left-0 right-0  mx-auto absolute z-8 text-center w-[640px] h-[480px]"
             ref={canvasRef}
