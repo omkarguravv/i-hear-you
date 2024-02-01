@@ -74,7 +74,7 @@ const Header = () => {
               <h2>
                 <Link
                   onClick={handleLinkClick}
-                  className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-black shadow-xl shadow-black/20 ring-1 [&:not(:focus)]:ring-inset ring-gray-700/30 hover:bg-gray-700/70 focus:ring-gray-600 focus:ring-offset-2 text-base font-medium px-5 py-2.5 justify-center text-white"
+                  className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-black shadow-xl shadow-black/20 ring-1 [&:not(:focus)]:ring-inset ring-gray-700/30  focus:ring-gray-600 focus:ring-offset-2 text-base font-medium px-5 py-2.5 justify-center text-white"
                   to="/sign"
                 >
                   Sign detection
@@ -105,7 +105,7 @@ const Header = () => {
           </h2>
           <h2>
             <Link
-              className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-black shadow-xl shadow-black/20 ring-1 [&:not(:focus)]:ring-inset ring-gray-700/30 hover:bg-gray-700/70 focus:ring-gray-600 focus:ring-offset-2 text-base font-medium px-5 py-2.5 justify-center text-white"
+              className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-black shadow-xl shadow-black/20 ring-1 [&:not(:focus)]:ring-inset ring-gray-700/30 focus:ring-gray-600 focus:ring-offset-2 text-base font-medium px-5 py-2.5 justify-center text-white"
               to="/sign"
             >
               Sign detection

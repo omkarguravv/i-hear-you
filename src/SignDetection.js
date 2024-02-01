@@ -12,7 +12,7 @@ const COCO_CLASSES = ["namaste", "hello"];
 function App() {
   const [detectedObject, setDetectedObject] = useState("");
 
-  const [activeCamera, setActiveCamera] = useState("user");
+  const [activeCamera, setActiveCamera] = useState("environment");
 
   const toggleCamera = () => {
     setActiveCamera((prevCamera) =>
@@ -98,6 +98,7 @@ function App() {
       tf.dispose(expanded);
       tf.dispose(obj);
     }
+    
   };
 
   useEffect(() => {
