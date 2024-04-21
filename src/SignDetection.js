@@ -44,7 +44,7 @@ function App() {
     //https://raw.githubusercontent.com/omkarguravv/i-hear-you/main/model/test.json
     //https://raw.githubusercontent.com/omkarguravv/i-hear-you/main/model/model.json
     const net = await tf.loadGraphModel(
-      "https://raw.githubusercontent.com/omkarguravv/i-hear-you/main/model/test.json"
+      "https://raw.githubusercontent.com/omkarguravv/i-hear-you/main/model/model.json"
     );
 
     //  Loop and detect hands
