@@ -8,8 +8,9 @@ import { nextFrame } from "@tensorflow/tfjs";
 // 2. TODO - Import drawing utility here
 // e.g. import { drawRect } from "./utilities";
 import { drawRect } from "./utilities";
+import { IoCameraReverseOutline } from "react-icons/io5";
 
-
+const COCO_CLASSES = ["namaste", "hello"];
 const videoConstraintsEnvironment = {
   // width: 1280,
   // height: 720,
@@ -27,7 +28,9 @@ function App() {
 
   const toggleCamera = () => {
     setActiveCamera((prevCamera) =>
-      prevCamera === videoConstraintsUser ? videoConstraintsEnvironment : videoConstraintsUser
+      prevCamera === videoConstraintsUser
+        ? videoConstraintsEnvironment
+        : videoConstraintsUser
     );
   };
   const webcamRef = useRef(null);
@@ -116,8 +119,8 @@ function App() {
 
   return (
     <>
-      <div className=" flex flex-col md:flex-row  min-h-screen w-full jusitify-center">
-        <header className="w-full md:w-1/2">
+      <div className=" flex flex-col w-full jusitify-center">
+        <header>
           <Webcam
             // className=" left-0 right-0 mx-auto absolute z-9 text-center w-[640px] h-[480px]"
             ref={webcamRef}
@@ -131,17 +134,12 @@ function App() {
               left: 0,
               right: 0,
               textAlign: "center",
-              zindex: 9,
+              zindex: 8,
               width: 640,
               height: 480,
             }}
           />
-          <button
-            className="mt-10 inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-black shadow-xl shadow-black/20 ring-1 [&:not(:focus)]:ring-inset ring-gray-700/30 hover:bg-gray-700/70 focus:ring-gray-600 focus:ring-offset-2 text-base font-medium px-5 py-2.5 justify-center text-white"
-            onClick={toggleCamera}
-          >
-            Toggle Camera
-          </button>
+
           <canvas
             // className="hidden left-0 right-0  mx-auto absolute z-8 text-center w-[640px] h-[480px]"
             ref={canvasRef}
@@ -152,13 +150,34 @@ function App() {
               left: 0,
               right: 0,
               textAlign: "center",
-              zindex: 8,
+              zindex: 9,
               width: 640,
               height: 480,
             }}
           />
         </header>
-        
+
+        <div
+          style={{
+            position: "relative",
+            marginTop: "auto",
+            marginBottom: "auto",
+            top: 0,
+            bottom: 0,
+            textAlign: "center",
+            zindex: 10,
+          }}
+          
+        >
+          <button
+            className="mt-0 md:mt-30 inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-black shadow-xl shadow-black/20 ring-1 [&:not(:focus)]:ring-inset ring-gray-700/30 hover:bg-gray-700/70 focus:ring-gray-600 focus:ring-offset-2 text-base font-medium px-5 py-2.5 justify-center text-white"
+            onClick={toggleCamera}
+          >
+            <IoCameraReverseOutline width={20} />
+
+            Toggle Camera
+          </button>
+        </div>
       </div>
     </>
   );
