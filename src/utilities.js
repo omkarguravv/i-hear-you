@@ -32,6 +32,7 @@ export const drawRect = (boxes, classes, scores, threshold, imgWidth, imgHeight,
             const text = classes[i]
             
             // Set styling
+            // console.log(labelMap[text]);
             ctx.strokeStyle = labelMap[text]['color']
             ctx.lineWidth = 10
             ctx.fillStyle = 'black'

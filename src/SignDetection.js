@@ -44,7 +44,7 @@ function App() {
     //https://raw.githubusercontent.com/omkarguravv/i-hear-you/main/model/test.json
     //https://raw.githubusercontent.com/omkarguravv/i-hear-you/main/model/model.json
     const net = await tf.loadGraphModel(
-      "https://raw.githubusercontent.com/omkarguravv/i-hear-you/main/model/model.json"
+      "https://raw.githubusercontent.com/omkarguravv/i-hear-you/main/model/test.json"
     );
 
     //  Loop and detect hands
@@ -82,10 +82,14 @@ function App() {
       const expanded = casted.expandDims(0);
       const obj = await net.executeAsync(expanded);
       console.log(obj)
-
+      //model.json
       const boxes = await obj[6].array();
       const classes = await obj[5].array();
       const scores = await obj[1].array();
+      //test.json
+      // const boxes = await obj[1].array();
+      // const classes = await obj[4].array();
+      // const scores = await obj[3].array();
 
       
       // Draw mesh
