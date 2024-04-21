@@ -81,11 +81,11 @@ function App() {
       const casted = resized.cast("int32");
       const expanded = casted.expandDims(0);
       const obj = await net.executeAsync(expanded);
-      // console.log(obj)
+      console.log(obj)
 
-      const boxes = await obj[6].array();
-      const classes = await obj[5].array();
-      const scores = await obj[1].array();
+      const boxes = await obj[2].array();
+      const classes = await obj[6].array();
+      const scores = await obj[4].array();
 
       
       // Draw mesh
