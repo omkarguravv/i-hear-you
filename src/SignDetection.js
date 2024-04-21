@@ -4,7 +4,7 @@ import * as tf from "@tensorflow/tfjs";
 import Webcam from "react-webcam";
 import "./App.css";
 // import model from "./model.json"
-import { nextFrame } from "@tensorflow/tfjs";
+// import { nextFrame } from "@tensorflow/tfjs";
 // 2. TODO - Import drawing utility here
 // e.g. import { drawRect } from "./utilities";
 import { drawRect } from "./utilities";
@@ -83,9 +83,9 @@ function App() {
       const obj = await net.executeAsync(expanded);
       console.log(obj)
 
-      const boxes = await obj[2].array();
-      const classes = await obj[6].array();
-      const scores = await obj[4].array();
+      const boxes = await obj[6].array();
+      const classes = await obj[5].array();
+      const scores = await obj[1].array();
 
       
       // Draw mesh
